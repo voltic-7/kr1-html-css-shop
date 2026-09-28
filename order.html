@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Футбольный интернет-магазин">
+    <meta property="og:description" content="Магазин футбольной экипировки и инвентаря.">
+    <meta property="og:image" content="https://voltic-7.github.io/kr1-html-css-shop/images/preview.jpg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Оформление заявки в нашем футбольном магазине.">
+    <title>Оформление заявки — Футбольный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div class="site-header">
+        <a class="site-logo" href="index.html">FootballShop</a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="order.html">Оформить заказ</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+        <span class="breadcrumbs__current">Оформление заявки</span>
+    </nav>
+
+    <section class="section">
+        <h1 class="section__title">Оформление заявки</h1>
+        <p>Заполните форму ниже, чтобы оставить заявку. Наши менеджеры свяжутся с вами в ближайшее время.</p>
+        
+        <form class="order-form" id="checkout-form" action="#" method="post" style="max-width: 600px; margin-top: 20px;">
+            <div class="order-form__field">
+                <label class="order-form__label" for="checkout-name">Имя</label>
+                <input class="order-form__control" id="checkout-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" required>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="checkout-email">E-mail</label>
+                <input class="order-form__control" id="checkout-email" name="email" type="email" placeholder="example@mail.ru" required>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="checkout-phone">Телефон</label>
+                <input class="order-form__control" id="checkout-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+                <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="checkout-address">Адрес доставки</label>
+                <textarea class="order-form__control" id="checkout-address" name="address" rows="3" placeholder="Укажите город, улицу, дом и квартиру" required></textarea>
+            </div>
+
+            <div class="order-form__field">
+                <label class="order-form__label" for="checkout-comment">Комментарий к заказу</label>
+                <textarea class="order-form__control" id="checkout-comment" name="comment" rows="4" placeholder="Дополнительная информация (необязательно)"></textarea>
+            </div>
+
+            <div class="order-form__field order-form__field--checkbox">
+                <label class="order-form__label">
+                    <input class="order-form__control" id="checkout-agreement" name="agreement" type="checkbox" required>
+                    Я согласен на обработку персональных данных
+                </label>
+            </div>
+
+            <div class="order-form__actions">
+                <button class="button order-form__button" type="submit">Оформить заказ</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 FootballShop. Все права защищены.</p>
+    <p>Магазин футбольной экипировки</p>
+</footer>
+</body>
+</html>

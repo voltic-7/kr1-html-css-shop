@@ -408,3 +408,151 @@ html {
     font: inherit;
 }
 
+
+/* ===============================
+   6. Самостоятельная доработка
+   =============================== */
+
+:root {
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 8px 16px rgba(0,0,0,0.12);
+    --transition-fast: 0.25s ease-in-out;
+}
+
+/* Улучшение карточек: бейджи, тени, плавность */
+.product-card {
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-card__badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: var(--color-danger, #d93025);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.product-card__badge--new {
+    background-color: var(--color-success, #188038);
+}
+
+.product-card__category {
+    font-size: 13px;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-xs);
+}
+
+/* Sticky-фильтр */
+.catalog-filters {
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    box-shadow: var(--shadow-sm);
+}
+
+/* FAQ Блок */
+.faq {
+    display: grid;
+    gap: var(--space-md);
+}
+.faq__item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-sm);
+}
+.faq__question {
+    margin: 0 0 var(--space-sm) 0;
+    font-size: 18px;
+    color: var(--color-primary);
+}
+.faq__answer {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+/* Отзывы */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+.review-card {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-accent);
+    box-shadow: var(--shadow-sm);
+}
+.review-card__author {
+    font-weight: bold;
+    margin-bottom: var(--space-xs);
+}
+.review-card__text {
+    font-style: italic;
+    color: var(--color-text);
+}
+
+/* Кнопка наверх */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-primary);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    z-index: 100;
+}
+.scroll-top:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+/* Анимация модального окна */
+.order-dialog {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.order-dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Поведение кнопки наверх */
+.scroll-top {
+    opacity: 0;
+    pointer-events: none;
+}
+.scroll-top.is-visible {
+    opacity: 0.8;
+    pointer-events: auto;
+}
+.scroll-top.is-visible:hover {
+    opacity: 1;
+}

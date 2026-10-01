@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Футбольный интернет-магазин">
+    <meta property="og:description" content="Магазин футбольной экипировки и инвентаря.">
+    <meta property="og:image" content="https://voltic-7.github.io/kr1-html-css-shop/images/preview.jpg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Страница обратной связи.">
+    <title>Обратная связь — Футбольный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <div class="site-header">
+        <a class="site-logo" href="index.html">FootballShop</a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="feedback.html">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+        <span class="breadcrumbs__current">Обратная связь</span>
+    </nav>
+
+    <section class="section" id="feedback">
+        <h1 class="section__title">Обратная связь</h1>
+        <p>Заполните форму ниже, чтобы отправить нам сообщение на e-mail.</p>
+        
+        <form class="order-form" action="#" method="post" style="max-width: 600px; margin-bottom: var(--space-xxl);">
+            <div class="order-form__field">
+                <label class="order-form__label" for="fb-email">Ваш E-mail</label>
+                <input class="order-form__control" id="fb-email" name="email" type="email" placeholder="example@mail.ru" required>
+            </div>
+            <div class="order-form__field">
+                <label class="order-form__label" for="fb-message">Текст обращения</label>
+                <textarea class="order-form__control" id="fb-message" name="message" rows="5" placeholder="Напишите ваш вопрос или предложение..." required></textarea>
+            </div>
+            <div class="order-form__actions" style="justify-content: flex-start;">
+                <button class="button order-form__button" type="submit">Отправить на E-mail</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="section" id="admin">
+        <h2 class="section__title">Наш администратор</h2>
+        <p>Познакомьтесь с нашим главным администратором, который всегда готов помочь вам с выбором экипировки!</p>
+        
+        <div class="products-grid">
+            <article class="product-card">
+                <img src="images/admin.jpg" alt="Администратор за работой" style="height: 350px; object-fit: cover;">
+                <h3 class="product-card__title">На связи</h3>
+                <p class="product-card__description">Всегда готов ответить на ваши письма.</p>
+            </article>
+            <article class="product-card">
+                <img src="images/admin1.jpg" alt="Администратор на складе" style="height: 350px; object-fit: cover;">
+                <h3 class="product-card__title">Контроль качества</h3>
+                <p class="product-card__description">Лично проверяет каждый заказ.</p>
+            </article>
+            <article class="product-card">
+                <img src="images/admin2.jpg" alt="Администратор с клиентами" style="height: 350px; object-fit: cover;">
+                <h3 class="product-card__title">Помощь с выбором</h3>
+                <p class="product-card__description">Поможет подобрать идеальный размер.</p>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 FootballShop. Все права защищены.</p>
+    <p>Магазин футбольной экипировки</p>
+</footer>
+</body>
+</html>

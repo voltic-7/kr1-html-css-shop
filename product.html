@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Футбольный интернет-магазин">
+    <meta property="og:description" content="Магазин футбольной экипировки и инвентаря.">
+    <meta property="og:image" content="https://voltic-7.github.io/kr1-html-css-shop/images/preview.jpg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Страница товара футбольного магазина.">
+    <title>Карточка товара — Футбольный интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+<header>
+    <div class="site-header">
+        <a class="site-logo" href="index.html">FootballShop</a>
+
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="feedback.html">Обратная связь</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a class="breadcrumbs__link" href="index.html">Главная</a>
+        <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
+        <span class="breadcrumbs__current">Мяч Лига Чемпионов</span>
+    </nav>
+
+    <section class="section product-details">
+        <h1 class="section__title">Мяч Лига Чемпионов</h1>
+        
+        <div class="product-details__layout">
+            <div style="position: relative;">
+                <span class="product-card__badge product-card__badge--new">Новинка</span>
+                <img src="images/ball.jpg" alt="Мяч Лига Чемпионов" style="width: 100%; height: auto; border-radius: 12px;">
+            </div>
+            
+            <div class="product-details__info">
+                <p class="product-details__price">12000 руб.</p>
+                <p class="product-details__description">
+                    Официальный игровой мяч для профессионалов. Идеально подходит для игр на натуральном травяном газоне. 
+                    Обеспечивает превосходный контроль, идеальную траекторию полета и высокую износостойкость.
+                </p>
+
+                <table class="product-table">
+                    <caption>Характеристики товара</caption>
+                    <thead>
+                        <tr>
+                            <th>Параметр</th>
+                            <th>Значение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Категория</td>
+                            <td>Мячи</td>
+                        </tr>
+                        <tr>
+                            <td>Размер</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Материал</td>
+                            <td>Полиуретан (ПУ) 100%</td>
+                        </tr>
+                        <tr>
+                            <td>Тип соединения</td>
+                            <td>Термосклейка</td>
+                        </tr>
+                        <tr>
+                            <td>Наличие</td>
+                            <td>В наличии</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="button product-card__button" type="button" data-product="Мяч Лига Чемпионов">
+                    Заказать
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 FootballShop. Все права защищены.</p>
+    <p>Магазин футбольной экипировки</p>
+</footer>
+
+<!-- Модальное окно (копия из index.html, чтобы скрипт main.js работал на этой странице) -->
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-name">Имя</label>
+            <input class="order-form__control" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+        </div>
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-email">E-mail</label>
+            <input class="order-form__control" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+        </div>
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-phone">Телефон</label>
+            <input class="order-form__control" id="order-phone" name="phone" type="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+            <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+        <div class="order-form__actions">
+            <button class="button order-form__button" type="button" id="close-order-dialog">Закрыть</button>
+            <button class="button order-form__button" type="submit">Отправить заявку</button>
+        </div>
+    </form>
+</dialog>
+
+<p class="success-message" id="success-message" hidden>
+    Форма успешно отправлена!
+</p>
+
+<a href="#top" class="scroll-top" aria-label="Вернуться наверх">↑</a>
+</body>
+</html>

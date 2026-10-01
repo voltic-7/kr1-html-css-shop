@@ -72,3 +72,15 @@ orderForm.addEventListener('submit', (event) => {
     // Закрываем модальное окно.
     orderDialog.close();
 });
+
+// Логика для кнопки "Наверх"
+const scrollTopBtn = document.querySelector('.scroll-top');
+if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('is-visible');
+        } else {
+            scrollTopBtn.classList.remove('is-visible');
+        }
+    });
+}

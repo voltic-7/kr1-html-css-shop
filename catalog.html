@@ -2,20 +2,20 @@
 <html lang="ru">
 <head>
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Учебный интернет-магазин">
-    <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+    <meta property="og:title" content="Футбольный интернет-магазин">
+    <meta property="og:description" content="Магазин футбольной экипировки и инвентаря.">
     <meta property="og:image" content="https://voltic-7.github.io/kr1-html-css-shop/images/preview.jpg">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-    <title>Каталог товаров — Учебный интернет-магазин</title>
+    <meta name="description" content="Каталог товаров футбольного магазина.">
+    <title>Каталог товаров — Футбольный магазин</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body id="top">
 <header>
     <div class="site-header">
-        <a class="site-logo" href="index.html">ShopProject</a>
+        <a class="site-logo" href="index.html">FootballShop</a>
 
         <nav class="site-nav" aria-label="Основная навигация">
             <ul class="site-nav__list">
@@ -24,7 +24,7 @@
                 <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
                 <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
-                <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+                <li class="site-nav__item"><a class="site-nav__link" href="feedback.html">Обратная связь</a></li>
             </ul>
         </nav>
     </div>
@@ -39,9 +39,8 @@
     <section class="section">
         <h1 class="section__title">Каталог товаров</h1>
         <p>
-            На этой странице представлен учебный каталог товаров.
-            В дальнейшем здесь будут добавлены фильтры, сортировка и более
-            подробные карточки.
+            На этой странице представлен ассортимент нашей футбольной экипировки.
+            Воспользуйтесь фильтрами для быстрого поиска нужного товара.
         </p>
     </section>
 
@@ -88,24 +87,29 @@
 
             <div class="products-grid">
                 <article class="product-card">
-                    <h3 class="product-card__title">Товар 1</h3>
-                    <p class="product-card__description">Краткое описание учебного товара.</p>
-                    <p class="product-card__price">Цена: 1000 руб.</p>
-                    <a class="button" href="index.html#popular">Подробнее</a>
+                    <span class="product-card__badge product-card__badge--new">Новинка</span>
+                    <img src="images/ball.jpg" alt="Мяч Лига Чемпионов" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="product-card__category">Мячи</div>
+                    <h3 class="product-card__title">Мяч Лига Чемпионов</h3>
+                    <p class="product-card__description">Официальный игровой мяч для профессионалов.</p>
+                    <p class="product-card__price">Цена: 12000 руб.</p>
                 </article>
 
                 <article class="product-card">
-                    <h3 class="product-card__title">Товар 2</h3>
-                    <p class="product-card__description">Краткое описание учебного товара.</p>
-                    <p class="product-card__price">Цена: 1500 руб.</p>
-                    <a class="button" href="index.html#popular">Подробнее</a>
+                    <span class="product-card__badge">Хит</span>
+                    <img src="images/boots.jpg" alt="Бутсы Predator Pro" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="product-card__category">Обувь</div>
+                    <h3 class="product-card__title">Бутсы Predator Pro</h3>
+                    <p class="product-card__description">Профессиональные бутсы для игры на натуральном газоне.</p>
+                    <p class="product-card__price">Цена: 18500 руб.</p>
                 </article>
 
                 <article class="product-card">
-                    <h3 class="product-card__title">Товар 3</h3>
-                    <p class="product-card__description">Краткое описание учебного товара.</p>
-                    <p class="product-card__price">Цена: 2000 руб.</p>
-                    <a class="button" href="index.html#popular">Подробнее</a>
+                    <img src="images/hands.jpg" alt="Вратарские перчатки Grip" style="width: 100%; height: auto; border-radius: 8px;">
+                    <div class="product-card__category">Экипировка</div>
+                    <h3 class="product-card__title">Вратарские перчатки Grip</h3>
+                    <p class="product-card__description">Перчатки с надежным сцеплением и защитой пальцев.</p>
+                    <p class="product-card__price">Цена: 6000 руб.</p>
                 </article>
             </div>
         </section>
@@ -113,8 +117,10 @@
 </main>
 
 <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+    <p>&copy; 2026 FootballShop. Все права защищены.</p>
+    <p>Магазин футбольной экипировки</p>
 </footer>
+
+<a href="#top" class="scroll-top" aria-label="Вернуться наверх">↑</a>
 </body>
 </html>

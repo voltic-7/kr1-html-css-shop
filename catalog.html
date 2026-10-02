@@ -49,36 +49,42 @@
             <h2>Фильтры</h2>
 
             <form class="filters-form" action="#" method="get">
-                <fieldset>
-                    <legend>Категория</legend>
+                <fieldset class="filters-form__group">
+                    <legend class="filters-form__legend">Категория</legend>
 
-                    <label class="filters-form__label">
-                        <input type="checkbox" name="category" value="all">
-                        Все товары
+                    <label class="filters-form__checkbox-label">
+                        <input class="filters-form__checkbox" type="checkbox" name="category" value="all" checked>
+                        <span class="filters-form__checkbox-text">Все товары</span>
                     </label>
 
-                    <label class="filters-form__label">
-                        <input type="checkbox" name="category" value="popular">
-                        Популярные
+                    <label class="filters-form__checkbox-label">
+                        <input class="filters-form__checkbox" type="checkbox" name="category" value="popular">
+                        <span class="filters-form__checkbox-text">Популярные</span>
                     </label>
 
-                    <label class="filters-form__label">
-                        <input type="checkbox" name="category" value="new">
-                        Новинки
+                    <label class="filters-form__checkbox-label">
+                        <input class="filters-form__checkbox" type="checkbox" name="category" value="new">
+                        <span class="filters-form__checkbox-text">Новинки</span>
                     </label>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Цена</legend>
-
-                    <label class="filters-form__label" for="price-from">От</label>
-                    <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-
-                    <label class="filters-form__label" for="price-to">До</label>
-                    <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+                <fieldset class="filters-form__group">
+                    <legend class="filters-form__legend">Цена, руб.</legend>
+                    
+                    <div class="filters-form__price-row">
+                        <div class="filters-form__price-field">
+                            <label class="filters-form__price-label" for="price-from">От</label>
+                            <input class="filters-form__control" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+                        </div>
+                        <span class="filters-form__price-divider">-</span>
+                        <div class="filters-form__price-field">
+                            <label class="filters-form__price-label" for="price-to">До</label>
+                            <input class="filters-form__control" id="price-to" name="price-to" type="number" min="0" placeholder="15000">
+                        </div>
+                    </div>
                 </fieldset>
 
-                <button class="button" type="submit">Применить</button>
+                <button class="button filters-form__submit" type="submit" style="width: 100%;">Показать товары</button>
             </form>
         </aside>
 

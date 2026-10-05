@@ -11,6 +11,7 @@
     <meta name="description" content="Каталог товаров футбольного магазина.">
     <title>Каталог товаров — Футбольный магазин</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body id="top">
 <header>
@@ -99,6 +100,7 @@
                     <h3 class="product-card__title">Мяч Лига Чемпионов</h3>
                     <p class="product-card__description">Официальный игровой мяч для профессионалов.</p>
                     <p class="product-card__price">Цена: 12000 руб.</p>
+                    <a class="button product-card__button" href="product.html">Подробнее</a>
                 </article>
 
                 <article class="product-card">
@@ -108,6 +110,9 @@
                     <h3 class="product-card__title">Бутсы Predator Pro</h3>
                     <p class="product-card__description">Профессиональные бутсы для игры на натуральном газоне.</p>
                     <p class="product-card__price">Цена: 18500 руб.</p>
+                    <button class="button product-card__button" type="button" data-product="Бутсы Predator Pro">
+                        Заказать
+                    </button>
                 </article>
 
                 <article class="product-card">
@@ -116,6 +121,9 @@
                     <h3 class="product-card__title">Вратарские перчатки Grip</h3>
                     <p class="product-card__description">Перчатки с надежным сцеплением и защитой пальцев.</p>
                     <p class="product-card__price">Цена: 6000 руб.</p>
+                    <button class="button product-card__button" type="button" data-product="Вратарские перчатки Grip">
+                        Заказать
+                    </button>
                 </article>
 
                 <article class="product-card">
@@ -124,6 +132,9 @@
                     <h3 class="product-card__title">Бутсы phantom elite GX2</h3>
                     <p class="product-card__description">Профессиональные бутсы для игры на натуральном газоне.</p>
                     <p class="product-card__price">Цена: 20000 руб.</p>
+                    <button class="button product-card__button" type="button" data-product="Бутсы phantom elite GX2">
+                        Заказать
+                    </button>
                 </article>
 
                 <article class="product-card">
@@ -132,6 +143,9 @@
                     <h3 class="product-card__title">Бутсы Puma Future</h3>
                     <p class="product-card__description">Профессиональные бутсы для игры на натуральном газоне.</p>
                     <p class="product-card__price">Цена: 20000 руб.</p>
+                    <button class="button product-card__button" type="button" data-product="Бутсы Puma Future">
+                        Заказать
+                    </button>
                 </article>
 
                 <article class="product-card">
@@ -141,6 +155,9 @@
                     <h3 class="product-card__title">Белые носки Nike</h3>
                     <p class="product-card__description">Удобная и стильная пара носков.</p>
                     <p class="product-card__price">Цена: 2000 руб.</p>
+                    <button class="button product-card__button" type="button" data-product="Белые носки Nike">
+                        Заказать
+                    </button>
                 </article>
 
             </div>
@@ -152,6 +169,97 @@
     <p>&copy; 2026 FootballShop. Все права защищены.</p>
     <p>Магазин футбольной экипировки</p>
 </footer>
+
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+        <input id="selected-product" name="selected-product" type="hidden">
+
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-name">Имя</label>
+            <input class="order-form__control" id="order-name"
+                    name="name"
+                    type="text"
+                    placeholder="Введите ваше имя"
+                    minlength="2"
+                    autocomplete="given-name"
+                    required
+            >
+        </div>
+
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-email">E-mail</label>
+            <input class="order-form__control" id="order-email"
+                    name="email"
+                    type="email"
+                    placeholder="example@mail.ru"
+                    autocomplete="email"
+                    required
+            >
+        </div>
+
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-phone">Телефон</label>
+            <input class="order-form__control" id="order-phone"
+                    name="phone"
+                    type="tel"
+                    inputmode="tel"
+                    placeholder="+7 (900) 000-00-00"
+                    pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+                    required
+            >
+            <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-date">Дата связи</label>
+            <input class="order-form__control" id="order-date"
+                    name="date"
+                    type="date"
+            >
+        </div>
+
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-topic">Тема заявки</label>
+            <select class="order-form__control" id="order-topic" name="topic" required>
+                <option value="">Выберите тему</option>
+                <option value="product">Заказ товара</option>
+                <option value="consultation">Консультация</option>
+                <option value="delivery">Доставка</option>
+            </select>
+        </div>
+
+        <div class="order-form__field">
+            <label class="order-form__label" for="order-comment">Комментарий</label>
+            <textarea class="order-form__control" id="order-comment"
+                    name="comment"
+                    rows="4"
+                    placeholder="Укажите дополнительную информацию"
+            ></textarea>
+        </div>
+
+        <div class="order-form__field order-form__field--checkbox">
+            <label class="order-form__label">
+                <input class="order-form__control" id="order-agreement"
+                        name="agreement"
+                        type="checkbox"
+                        required
+                >
+                Я согласен на обработку данных
+            </label>
+        </div>
+
+        <div class="order-form__actions">
+            <button class="button order-form__button" type="button" id="close-order-dialog">Закрыть</button>
+            <button class="button order-form__button" type="submit">Отправить заявку</button>
+        </div>
+    </form>
+</dialog>
+
+<p class="success-message" id="success-message" hidden>
+    Форма успешно отправлена!
+</p>
 
 <a href="#top" class="scroll-top" aria-label="Вернуться наверх">↑</a>
 </body>
